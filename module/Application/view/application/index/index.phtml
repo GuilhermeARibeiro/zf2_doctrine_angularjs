@@ -1,6 +1,18 @@
-<h1>Categorias</h1>
-<ul>
-<?php foreach($categorias as $categoria): ?>
-    <li><?php echo $categoria->getNome();?></li>
-<?php endforeach; ?>
-</ul>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Categorias</h3>
+    </div>
+    <div class="panel-body">
+    <table>
+    <th>Nome</th>
+    <th>Descricao</th>
+	   	<?php foreach($categorias as $categoria): ?>
+	   	<tr>
+			<td><?php echo $categoria->getNome();?></td>
+			
+		</tr>
+		
+		<?php endforeach; ?>	
+	</table>
+    </div>
+</div>

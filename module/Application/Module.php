@@ -26,6 +26,26 @@ class Module
         return include __DIR__ . '/config/module.config.php';
     }
 
+    public function getServiceConfig()
+    {
+        return array(
+            'factories' => array(
+                'Application\Service\Categoria' => function($sm){
+                    
+                    $em = $sm->get('Doctrine\ORM\EntityManager');
+                    $categoriaService = new \Application\Service\Categoria($em);
+                    return $categoriaService;
+                },
+                'Application\Service\Produto' => function($sm){
+                    
+                    $em = $sm->get('Doctrine\ORM\EntityManager');
+                    $categoriaService = new \Application\Service\Produto($em);
+                    return $categoriaService;
+                }
+            )
+        );
+    }
+
     public function getAutoloaderConfig()
     {
         return array(

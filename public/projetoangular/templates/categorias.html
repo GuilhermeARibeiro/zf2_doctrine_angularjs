@@ -1,0 +1,17 @@
+<h3>Categorias</h3>
+<input type="text" ng-model="nomes" placeholder="Pesquisar">
+<h3>{{nome}}</h3>
+<table class="table">
+	<thead>
+		<th>ID</th>
+		<th>Categoria</th>
+		<th>Ação</th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="registro in registros | filter:nomes">
+			<td>{{registro.id}}</td>
+			<td>{{registro.nome}}</td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
